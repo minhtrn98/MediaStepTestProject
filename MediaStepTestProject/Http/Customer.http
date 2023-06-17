@@ -1,0 +1,18 @@
+@HostAddress = https://localhost:5001/api/customer
+
+POST {{HostAddress}}/addrange
+Content-Type: application/json
+
+{
+  "CustomerDtos": [
+    {
+      "FullName": "Minh Tran",
+      "Email": "minhtrn98@gmail.com"
+    }
+  ]
+}
+
+###
+
+GET {{HostAddress}}
+Accept: application/json

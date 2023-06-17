@@ -1,0 +1,14 @@
+﻿@HostAddress = https://localhost:5001/api/product
+
+POST {{HostAddress}}/addrange
+Content-Type: application/json
+
+{
+  "ProductDtos": [
+    {
+      "Name": "Bánh mì pate",
+      "Price": 20.00,
+      "ShopId": 1
+    }
+  ]
+}
