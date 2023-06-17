@@ -20,7 +20,7 @@ public class ShopQuery : IRequest<IEnumerable<ShopDto>>
         {
             return await _context.Shops
                 .AsNoTracking()
-                .OrderBy(c => c.Location)
+                .OrderByDescending(c => c.Location)
                 .ProjectToType<ShopDto>()
                 .ToListAsync(cancellationToken);
         }

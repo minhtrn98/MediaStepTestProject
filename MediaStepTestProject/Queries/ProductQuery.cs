@@ -24,7 +24,7 @@ public class ProductQuery : IRequest<IEnumerable<ProductQueryResponse>>
                 .Where(c => request.ShopId == null || c.ShopId == request.ShopId)
                 .Where(c => request.SearchStr == null || c.Name.Contains(request.SearchStr))
                 .AsNoTracking()
-                .OrderBy(s => s.Price)
+                .OrderByDescending(s => s.Price)
                 .Select(p => new ProductQueryResponse()
                 {
                     Id = p.Id,
