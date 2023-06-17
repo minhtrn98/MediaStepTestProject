@@ -13,7 +13,6 @@ public class CustomerDto
     [ValidEmail]
     public string Email { get; set; } = string.Empty;
 
-    // NOTE: add validation dob cannot grater than now
     [ValidDoB]
     public DateTime? Dob { get; set; }
 }
