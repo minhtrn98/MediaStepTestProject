@@ -10,9 +10,10 @@ public class CustomerDto
     public string FullName { get; set; } = string.Empty;
 
     [MaxLength(200)]
-    // NOTE: add validatetion email
+    [ValidEmail]
     public string Email { get; set; } = string.Empty;
 
     // NOTE: add validation dob cannot grater than now
+    [ValidDoB]
     public DateTime? Dob { get; set; }
 }
