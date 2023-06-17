@@ -6,8 +6,16 @@ Content-Type: application/json
 {
   "ShopDtos": [
     {
-      "Name": "Bánh mì cô ba",
+      "Name": "Long Chau Medicine",
       "Location": "Ba Đình Hà Nội"
+    },
+    {
+      "Name": "Pharmacity",
+      "Location": "Tp HCM"
+    },
+    {
+      "Name": "An Khang Medicine",
+      "Location": "Đà Nẵng"
     }
   ]
 }

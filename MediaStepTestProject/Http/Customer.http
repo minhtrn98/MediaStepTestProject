@@ -5,11 +5,97 @@ Content-Type: application/json
 
 {
   "CustomerDtos": [
-    {
-      "FullName": "Minh Tran",
-      "Email": "minhtrn98@gmail.com"
-    }
-  ]
+  {
+    "name": "Colet Rossbrook",
+    "email": "crossbrook0@themeforest.net"
+  }, {
+    "name": "Lonni Pierrepoint",
+    "email": "lpierrepoint1@examiner.com"
+  }, {
+    "name": "Cathrin O'Driscoll",
+    "email": "codriscoll2@amazonaws.com"
+  }, {
+    "name": "Base Crilley",
+    "email": "bcrilley3@cyberchimps.com"
+  }, {
+    "name": "Emelita Todari",
+    "email": "etodari4@liveinternet.ru"
+  }, {
+    "name": "Myer Wasselin",
+    "email": "mwasselin5@php.net"
+  }, {
+    "name": "Christean Matanin",
+    "email": "cmatanin6@squarespace.com"
+  }, {
+    "name": "Gabriello Heakey",
+    "email": "gheakey7@hatena.ne.jp"
+  }, {
+    "name": "Danya Woodard",
+    "email": "dwoodard8@dot.gov"
+  }, {
+    "name": "Aleen Tilt",
+    "email": "atilt9@i2i.jp"
+  }, {
+    "name": "Margareta Baugh",
+    "email": "mbaugha@ucla.edu"
+  }, {
+    "name": "Dulce Alner",
+    "email": "dalnerb@gmpg.org"
+  }, {
+    "name": "Towny Hargreves",
+    "email": "thargrevesc@bandcamp.com"
+  }, {
+    "name": "Fran Porritt",
+    "email": "fporrittd@sciencedirect.com"
+  }, {
+    "name": "Carlos Ceccoli",
+    "email": "cceccolie@multiply.com"
+  }, {
+    "name": "Harriott Di Filippo",
+    "email": "hdif@instagram.com"
+  }, {
+    "name": "Jermaine Farres",
+    "email": "jfarresg@ebay.co.uk"
+  }, {
+    "name": "Ronnica Belliss",
+    "email": "rbellissh@globo.com"
+  }, {
+    "name": "Gunter While",
+    "email": "gwhilei@163.com"
+  }, {
+    "name": "Gerrilee Lynch",
+    "email": "glynchj@youtube.com"
+  }, {
+    "name": "Paulette Robus",
+    "email": "probusk@usnews.com"
+  }, {
+    "name": "Terrijo Wisdish",
+    "email": "twisdishl@friendfeed.com"
+  }, {
+    "name": "Jasmin Butson",
+    "email": "jbutsonm@bravesites.com"
+  }, {
+    "name": "Odo Forber",
+    "email": "oforbern@examiner.com"
+  }, {
+    "name": "Morris Wayt",
+    "email": "mwayto@paypal.com"
+  }, {
+    "name": "Emlynne Leadston",
+    "email": "eleadstonp@desdev.cn"
+  }, {
+    "name": "Sigismondo Monro",
+    "email": "smonroq@uiuc.edu"
+  }, {
+    "name": "Teodoor Tocknell",
+    "email": "ttocknellr@fda.gov"
+  }, {
+    "name": "Nathalie Gilbert",
+    "email": "ngilberts@simplemachines.org"
+  }, {
+    "name": "Glyn Judson",
+    "email": "gjudsont@devhub.com"
+  }]
 }
 
 ###

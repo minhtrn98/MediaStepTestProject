@@ -10,7 +10,7 @@ public class Product
     public int Id { get; set; }
 
     [Column(Order = 1)]
-    [StringLength(200)]
+    [StringLength(1000)]
     public string Name { get; set; } = string.Empty;
 
     [Column(Order = 2)]
