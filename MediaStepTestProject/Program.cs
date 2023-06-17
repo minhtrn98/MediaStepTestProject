@@ -1,4 +1,5 @@
 using MediaStepTestProject;
+using MediaStepTestProject.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -6,7 +7,7 @@ using Microsoft.OpenApi.Models;
 using System.Security.Claims;
 using System.Text;
 
-const string DEFAULT_POLICY = "DefaultPolicy";
+const string DEFAULT_CORS_POLICY = "DefaultPolicy";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,7 @@ builder.Services.AddCors(options =>
 {
     if (builder.Environment.IsDevelopment())
     {
-        options.AddPolicy(DEFAULT_POLICY,
+        options.AddPolicy(DEFAULT_CORS_POLICY,
             builder => builder
                 .AllowAnyOrigin()
                 .AllowAnyHeader()
@@ -47,9 +48,9 @@ builder.Services.AddAuthentication(x =>
             ValidateLifetime = true,
             ValidateAudience = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = "FakeIssuer",
-            ValidAudience = "FakeAudience",
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authentication")),
+            ValidIssuer = JwtModel.Issuer,
+            ValidAudience = JwtModel.Audience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtModel.SecretKey)),
             ClockSkew = TimeSpan.Zero,
         };
     });
@@ -99,7 +100,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors(DEFAULT_POLICY);
+app.UseCors(DEFAULT_CORS_POLICY);
 
 app.UseAuthentication();
 app.UseAuthorization();

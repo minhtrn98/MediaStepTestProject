@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using MediaStepTestProject.Models;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -22,23 +23,19 @@ public class LoginCommand : IRequest<string>
 
         public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            // Kiểm tra tính hợp lệ của địa chỉ email và xác định vai trò
-            if (request.Email.Equals("admin@mail.com", StringComparison.OrdinalIgnoreCase))
+            if (request.Email.Equals("admin@gmail.com", StringComparison.OrdinalIgnoreCase))
             {
                 return GenerateJwtToken(request.Email, "admin");
             }
 
             var customer = await _context.Customers.FirstOrDefaultAsync(c => c.Email == request.Email, cancellationToken);
 
-            if (customer is null)
-            {
-                throw new Exception("User not found!");
-            }
-
-            return GenerateJwtToken(request.Email, "customer", customer.Id);
+            return customer is null
+                ? throw new Exception("User not found!")
+                : GenerateJwtToken(request.Email, "customer", customer.Id);
         }
 
-        private string GenerateJwtToken(string email, string role, int cusId = 0)
+        private static string GenerateJwtToken(string email, string role, int cusId = 0)
         {
             var claims = new[]
             {
@@ -47,13 +44,13 @@ public class LoginCommand : IRequest<string>
                 new Claim(ClaimTypes.Role, role)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authentication"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtModel.SecretKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var expires = DateTime.UtcNow.AddDays(1);
 
             var token = new JwtSecurityToken(
-                "FakeIssuer",
-                "FakeAudience",
+                JwtModel.Issuer,
+                JwtModel.Audience,
                 claims,
                 expires: expires,
                 signingCredentials: credentials
