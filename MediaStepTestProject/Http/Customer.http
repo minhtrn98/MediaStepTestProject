@@ -7,94 +7,94 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hc
 {
   "CustomerDtos": [
   {
-    "name": "Colet Rossbrook",
+    "fullName": "Colet Rossbrook",
     "email": "crossbrook0@themeforest.net"
   }, {
-    "name": "Lonni Pierrepoint",
+    "fullName": "Lonni Pierrepoint",
     "email": "lpierrepoint1@examiner.com"
   }, {
-    "name": "Cathrin O'Driscoll",
+    "fullName": "Cathrin O'Driscoll",
     "email": "codriscoll2@amazonaws.com"
   }, {
-    "name": "Base Crilley",
+    "fullName": "Base Crilley",
     "email": "bcrilley3@cyberchimps.com"
   }, {
-    "name": "Emelita Todari",
+    "fullName": "Emelita Todari",
     "email": "etodari4@liveinternet.ru"
   }, {
-    "name": "Myer Wasselin",
+    "fullName": "Myer Wasselin",
     "email": "mwasselin5@php.net"
   }, {
-    "name": "Christean Matanin",
+    "fullName": "Christean Matanin",
     "email": "cmatanin6@squarespace.com"
   }, {
-    "name": "Gabriello Heakey",
+    "fullName": "Gabriello Heakey",
     "email": "gheakey7@hatena.ne.jp"
   }, {
-    "name": "Danya Woodard",
+    "fullName": "Danya Woodard",
     "email": "dwoodard8@dot.gov"
   }, {
-    "name": "Aleen Tilt",
+    "fullName": "Aleen Tilt",
     "email": "atilt9@i2i.jp"
   }, {
-    "name": "Margareta Baugh",
+    "fullName": "Margareta Baugh",
     "email": "mbaugha@ucla.edu"
   }, {
-    "name": "Dulce Alner",
+    "fullName": "Dulce Alner",
     "email": "dalnerb@gmpg.org"
   }, {
-    "name": "Towny Hargreves",
+    "fullName": "Towny Hargreves",
     "email": "thargrevesc@bandcamp.com"
   }, {
-    "name": "Fran Porritt",
+    "fullName": "Fran Porritt",
     "email": "fporrittd@sciencedirect.com"
   }, {
-    "name": "Carlos Ceccoli",
+    "fullName": "Carlos Ceccoli",
     "email": "cceccolie@multiply.com"
   }, {
-    "name": "Harriott Di Filippo",
+    "fullName": "Harriott Di Filippo",
     "email": "hdif@instagram.com"
   }, {
-    "name": "Jermaine Farres",
+    "fullName": "Jermaine Farres",
     "email": "jfarresg@ebay.co.uk"
   }, {
-    "name": "Ronnica Belliss",
+    "fullName": "Ronnica Belliss",
     "email": "rbellissh@globo.com"
   }, {
-    "name": "Gunter While",
+    "fullName": "Gunter While",
     "email": "gwhilei@163.com"
   }, {
-    "name": "Gerrilee Lynch",
+    "fullName": "Gerrilee Lynch",
     "email": "glynchj@youtube.com"
   }, {
-    "name": "Paulette Robus",
+    "fullName": "Paulette Robus",
     "email": "probusk@usnews.com"
   }, {
-    "name": "Terrijo Wisdish",
+    "fullName": "Terrijo Wisdish",
     "email": "twisdishl@friendfeed.com"
   }, {
-    "name": "Jasmin Butson",
+    "fullName": "Jasmin Butson",
     "email": "jbutsonm@bravesites.com"
   }, {
-    "name": "Odo Forber",
+    "fullName": "Odo Forber",
     "email": "oforbern@examiner.com"
   }, {
-    "name": "Morris Wayt",
+    "fullName": "Morris Wayt",
     "email": "mwayto@paypal.com"
   }, {
-    "name": "Emlynne Leadston",
+    "fullName": "Emlynne Leadston",
     "email": "eleadstonp@desdev.cn"
   }, {
-    "name": "Sigismondo Monro",
+    "fullName": "Sigismondo Monro",
     "email": "smonroq@uiuc.edu"
   }, {
-    "name": "Teodoor Tocknell",
+    "fullName": "Teodoor Tocknell",
     "email": "ttocknellr@fda.gov"
   }, {
-    "name": "Nathalie Gilbert",
+    "fullName": "Nathalie Gilbert",
     "email": "ngilberts@simplemachines.org"
   }, {
-    "name": "Glyn Judson",
+    "fullName": "Glyn Judson",
     "email": "gjudsont@devhub.com"
   }]
 }
