@@ -17,20 +17,29 @@ public class CustomerProductShopQuery : IRequest<IEnumerable<CustomerProductShop
         public async Task<IEnumerable<CustomerProductShopQueryResponse>> Handle(
             CustomerProductShopQuery request, CancellationToken cancellationToken)
         {
-            var query = from cus in _context.Customers
-                        join cp in _context.CustomerProducts on cus.Id equals cp.CustomerId
-                        join pro in _context.Products on cp.ProductId equals pro.Id
-                        join shp in _context.Shops on pro.ShopId equals shp.Id
-                        orderby cus.FullName, shp.Location descending, pro.Price descending
-                        select new CustomerProductShopQueryResponse()
-                        {
-                            CustomerName = cus.FullName,
-                            CustomerEmail = cus.Email,
-                            ProductName = pro.Name,
-                            ProductPrice = pro.Price,
-                            ShopName = shp.Name,
-                            ShopLocation = shp.Location
-                        };
+            // check 30 cust
+            if (await _context.Shops.CountAsync(cancellationToken) < 3
+                || await _context.Customers.CountAsync(cancellationToken) < 30
+                || await _context.Products.CountAsync(cancellationToken) < 3003)
+                return Enumerable.Empty<CustomerProductShopQueryResponse>();
+
+
+            var query = _context.Customers
+                    .Join(_context.CustomerProducts, cus => cus.Id, cp => cp.CustomerId, (cus, cp) => new { cus, cp })
+                    .Join(_context.Products, temp => temp.cp.ProductId, pro => pro.Id, (temp, pro) => new { temp.cus, temp.cp, pro })
+                    .Join(_context.Shops, temp => temp.pro.ShopId, shp => shp.Id, (temp, shp) => new { temp.cus, temp.cp, temp.pro, shp })
+                    .OrderBy(x => x.cus.FullName)
+                    .ThenByDescending(x => x.shp.Location)
+                    .ThenByDescending(x => x.pro.Price)
+                    .Select(x => new CustomerProductShopQueryResponse()
+                    {
+                        CustomerName = x.cus.FullName,
+                        CustomerEmail = x.cus.Email,
+                        ProductName = x.pro.Name,
+                        ProductPrice = x.pro.Price,
+                        ShopName = x.shp.Name,
+                        ShopLocation = x.shp.Location
+                    });
 
             return await query.ToListAsync(cancellationToken);
         }

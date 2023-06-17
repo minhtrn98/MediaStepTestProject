@@ -26,6 +26,18 @@ public class BuyProductCommand : IRequest
                 throw new Exception("Product not found!");
             }
 
+            var cusBuyProd = await _context.CustomerProducts
+                .FirstOrDefaultAsync(cp => cp.CustomerId == _loginService.UserId
+                    && cp.ProductId == request.ProductId
+                , cancellationToken);
+
+            if (cusBuyProd != null)
+            {
+                cusBuyProd.Quantity++;
+                await _context.SaveChangesAsync(cancellationToken);
+                return;
+            }
+
             await _context.CustomerProducts.AddAsync(new Entities.CustomerProduct
             {
                 CustomerId = _loginService.UserId,
