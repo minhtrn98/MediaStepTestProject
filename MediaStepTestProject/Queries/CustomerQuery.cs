@@ -20,6 +20,7 @@ public class CustomerQuery : IRequest<IEnumerable<CustomerDto>>
         {
             return await _context.Customers
                 .AsNoTracking()
+                .OrderBy(c => c.Email)
                 .ProjectToType<CustomerDto>()
                 .ToListAsync(cancellationToken);
         }
