@@ -4,6 +4,38 @@
 - Front-end: React
 - Database: Sql Server Express
 
+## Schema
+```
+> Customers
+| ------------- |:-------------:|
+| Id            | int           |
+| FullName      | nvarchar(200) |
+| Email         | nvarchar(200) |
+| DoB           | datetime2     |
+```
+```
+> Products
+| ------------- |:-------------:|
+| Id            | int           |
+| Name          | nvarchar(1000)|
+| Price         | decimal(18,2) |
+| ShopId        | int           |
+```
+```
+> Shops
+| ------------- |:-------------:|
+| Id            | int           |
+| Name          | nvarchar(200) |
+| Location      | nvarchar(MAX) |
+```
+```
+> CustomerProducts
+| ------------- |:-------------:|
+| CustomerId    | int           |
+| ProductId     | int           |
+| Quantity      | int           |
+```
+
 ## Phân quyền
 
 ### User Admin: { Email: admin@gmail.com }

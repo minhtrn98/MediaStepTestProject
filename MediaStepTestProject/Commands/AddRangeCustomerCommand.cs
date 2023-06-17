@@ -20,10 +20,6 @@ public class AddRangeCustomerCommand : IRequest
 
         public async Task Handle(AddRangeCustomerCommand request, CancellationToken cancellationToken)
         {
-            // check any email exists
-
-
-
             var customerRangeToAdd = request.CustomerDtos.Select(c => c.Adapt<Customer>());
 
             await _context.Customers.AddRangeAsync(customerRangeToAdd, cancellationToken);
