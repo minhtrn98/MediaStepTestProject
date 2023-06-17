@@ -41,7 +41,8 @@ public class BuyProductCommand : IRequest
             await _context.CustomerProducts.AddAsync(new Entities.CustomerProduct
             {
                 CustomerId = _loginService.UserId,
-                ProductId = request.ProductId
+                ProductId = request.ProductId,
+                Quantity = 1
             }, cancellationToken);
 
             await _context.SaveChangesAsync(cancellationToken);
