@@ -18,6 +18,6 @@ public class HomeController : ApiBaseController
     [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginCommand command, CancellationToken cancellationToken)
     {
-        return Ok(await Mediator.Send(command, cancellationToken));
+        return Ok(new { token = await Mediator.Send(command, cancellationToken) });
     }
 }

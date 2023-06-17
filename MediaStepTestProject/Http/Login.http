@@ -1,0 +1,8 @@
+@HostAddress = https://localhost:5001/api/home
+
+POST {{HostAddress}}/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com"
+}
