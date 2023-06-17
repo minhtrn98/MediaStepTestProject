@@ -17,6 +17,7 @@ public class CustomerController : ApiBaseController
     }
 
     [HttpGet("customer")]
+    [Authorize(Policy = "Admin")]
     public async Task<IActionResult> GetCustomer(CancellationToken cancellationToken)
     {
         return Ok(await Mediator.Send(new CustomerQuery(), cancellationToken));
